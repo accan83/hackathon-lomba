@@ -178,10 +178,13 @@ jQuery(document).ready(function() {
           var jData = jQuery.parseJSON(data);
 
           var person_nama = jData[0].nama_lgkp;
-		  
-		  // tes
-
+		  var tgl_lahir = jData[0].tgl_lhr;
+		  var jk = jData[0].jenis_kelamin;
+		  var religion = jData[0].agama;
+		  var alamat = jData[0].alamat;
+		
           $('#person_nama').val(person_nama);
+		  
         });
     }
   );
