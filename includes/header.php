@@ -8,7 +8,7 @@
 <!-- BEGIN HEAD -->
 <head>
 
-<title>G.I.I.O - Aplikasi Perijinan Terintegrasi</title>
+<title>G.I.O.O - Aplikasi Perijinan Terintegrasi</title>
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
