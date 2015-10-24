@@ -182,8 +182,26 @@ jQuery(document).ready(function() {
 		  var jk = jData[0].jenis_kelamin;
 		  var religion = jData[0].agama;
 		  var alamat = jData[0].alamat;
-		
-          $('#person_nama').val(person_nama);
+		  
+		  console.log(religion);
+		  console.log(alamat);
+		  console.log(jk);
+		  
+          $("input[name='person_nama']").val(person_nama);
+		  $("input[name='person_tanggal_lahir']").val(tgl_lahir);
+		  
+		  if(jk == 'PEREMPUAN') {
+			console.log("perempuan");
+			$("#person_jenis_kelamin").val('w');
+		  }
+		  
+		  else {
+			console.log("laki laki");
+			$("#person_jenis_kelamin").val('p');  
+		  }
+		  
+		  $("input[name='person_agama']").val(religion);
+		  $("input[name='person_alamat']").val(alamat);
 		  
         });
     }

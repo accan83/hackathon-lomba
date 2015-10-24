@@ -50,7 +50,7 @@
 	* </span>
 	</label>
 	<div class="col-md-2">
-		<select class="form-control" name="person_jenis_kelamin">
+		<select class="form-control" name="person_jenis_kelamin" id="person_jenis_kelamin">
 			<option value=""></option>
 			<option value="p">Pria</option>
 			<option value="w">Wanita</option>
