@@ -2,7 +2,7 @@
 
 <!-- BEGIN CONTAINER -->
 <div class="page-container page-container-bg-solid">
-	
+
 	<!-- BEGIN CONTENT -->
 	<div class="container-fluid container-lf-space page-content">
 		<h3 class="page-title">
@@ -54,7 +54,7 @@
 											<a href="#tab4" data-toggle="tab" class="step">
 												<span class="number">4 </span><br>
 												<span class="desc">
-													<i class="fa fa-check"></i> Upload Persyaratan 
+													<i class="fa fa-check"></i> Upload Persyaratan
 												</span>
 											</a>
 										</li>
@@ -62,7 +62,7 @@
 											<a href="#tab5" data-toggle="tab" class="step">
 												<span class="number">5 </span><br>
 												<span class="desc">
-													<i class="fa fa-check"></i> Konfirmasi 
+													<i class="fa fa-check"></i> Konfirmasi
 												</span>
 											</a>
 										</li>
@@ -89,7 +89,7 @@
 
 										<div class="tab-pane" id="tab3">
 											<h3 class="block">Legalitas Perusahaan</h3>
-											
+
 											//
 										</div>
 
@@ -123,7 +123,7 @@
 
 										<div class="tab-pane" id="tab5">
 											<h2 class="block text-center">Konfirmasi Pengajuan Permohonan</h2>
-											
+
 											<?php require_once('includes/perijinan/confirm_last_step.php'); ?>
 										</div>
 									</div>
@@ -161,7 +161,7 @@
 <!-- END PAGE LEVEL SCRIPTS -->
 
 <script type="text/javascript">
-jQuery(document).ready(function() {    
+jQuery(document).ready(function() {
 	RKR.init();
 	Layout.init();
 	FormWizard.init();
@@ -170,7 +170,7 @@ jQuery(document).ready(function() {
 </script>
 
 <script>
-  $('button[jAction=ambil-data]').click(
+  $('button[jAction=ambil-penduduk]').click(
     function(){
       var nik=$('#nik').val();
       $.post("http://repo.stikom.edu/gioo/penduduk/nik/",{'nik':nik})
@@ -178,31 +178,58 @@ jQuery(document).ready(function() {
           var jData = jQuery.parseJSON(data);
 
           var person_nama = jData[0].nama_lgkp;
-		  var tgl_lahir = jData[0].tgl_lhr;
-		  var jk = jData[0].jenis_kelamin;
-		  var religion = jData[0].agama;
-		  var alamat = jData[0].alamat;
-		  
-		  console.log(religion);
-		  console.log(alamat);
-		  console.log(jk);
-		  
-          $("input[name='person_nama']").val(person_nama);
-		  $("input[name='person_tanggal_lahir']").val(tgl_lahir);
-		  
-		  if(jk == 'PEREMPUAN') {
-			console.log("perempuan");
-			$("#person_jenis_kelamin").val('w');
-		  }
-		  
-		  else {
-			console.log("laki laki");
-			$("#person_jenis_kelamin").val('p');  
-		  }
-		  
-		  $("input[name='person_agama']").val(religion);
-		  $("input[name='person_alamat']").val(alamat);
-		  
+				  var tgl_lahir = jData[0].tgl_lhr;
+				  var jk = jData[0].jenis_kelamin;
+				  var religion = jData[0].agama;
+				  var alamat = jData[0].alamat;
+
+//				  console.log(religion);
+//				  console.log(alamat);
+//				  console.log(jk);
+
+	        $("input[name='person_nama']").val(person_nama);
+				  $("input[name='person_tanggal_lahir']").val(tgl_lahir);
+
+				  if(jk == 'PEREMPUAN') {
+//				console.log("perempuan");
+						$("#person_jenis_kelamin").val('w');
+				  }
+				  else {
+//					console.log("laki laki");
+						$("#person_jenis_kelamin").val('p');
+				  }
+
+				  $("input[name='person_agama']").val(religion);
+				  $("input[name='person_alamat']").val(alamat);
+
+        });
+    }
+  );
+  $('button[jAction=ambil-perusahaan]').click(
+    function(){
+      var ntdp=$('#ntdp').val();
+      $.post("http://repo.stikom.edu/gioo/perusahaan/ntdp/",{'ntdp':ntdp})
+        .done(function( data ) {
+          var jData = jQuery.parseJSON(data);
+
+          var perusahaan_nama = jData[0].nama;
+          var perusahaan_alamat = jData[0].alamat;
+          var perusahaan_kota = jData[0].kota;
+          var perusahaan_telp = jData[0].telp;
+          var perusahaan_fax = jData[0].fax;
+          var perusahaan_badan_usaha = jData[0].badan_usaha;
+
+//				  console.log(religion);
+//				  console.log(alamat);
+//				  console.log(jk);
+
+          $("input[name='perusahaan_nama']").val(perusahaan_nama);
+          $("select[name='perusahaan_badan_usaha']").val(perusahaan_badan_usaha.toLowerCase());
+//					console.log(perusahaan_badan_usaha.toLowerCase());
+          $("input[name='perusahaan_no_telp']").val(perusahaan_telp);
+          $("input[name='perusahaan_no_fax']").val(perusahaan_fax);
+          $("input[name='perusahaan_jalan']").val(perusahaan_alamat);
+          $("input[name='perusahaan_kabupaten_kota']").val(perusahaan_kota);
         });
     }
   );
