@@ -188,7 +188,17 @@ jQuery(document).ready(function() {
 //			console.log(jk);
 
       $("input[name='person_nama']").val(person_nama);
-	  $("input[name='person_tanggal_lahir']").val(tgl_lahir);
+	  
+	  var d = new Date(tgl_lahir);
+	  var day = d.getDate();
+	  var month = d.getMonth() + 1;
+	  var year = d.getFullYear();
+	  
+	  if(month < 10) {
+		  month = "0" + month;
+	  }
+	  
+	  $("input[name='person_tanggal_lahir']").val(day+month+year);
 
 	  if(jk == 'PEREMPUAN') {
 //				console.log("perempuan");
