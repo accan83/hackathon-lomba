@@ -178,6 +178,8 @@ jQuery(document).ready(function() {
           var jData = jQuery.parseJSON(data);
 
           var person_nama = jData[0].nama_lgkp;
+		  
+		  // tes
 
           $('#person_nama').val(person_nama);
         });
