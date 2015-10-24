@@ -6,7 +6,7 @@
 		<div class="input-group">
 			<input type="text" class="form-control" name="person_nik" placeholder="NIK" id="nik">
 			<span class="input-group-btn">
-				<button class="btn blue" type="button" jAction="ambil-data">
+				<button class="btn blue" type="button" jAction="ambil-penduduk">
 					Cari <i class="fa fa-search"></i>
 				</button>
 			</span>
