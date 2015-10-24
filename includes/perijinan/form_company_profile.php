@@ -1,4 +1,20 @@
 <div class="form-group">
+	<label class="control-label col-md-3">No. TDP <span class="required">
+	* </span>
+	</label>
+	<div class="col-md-4">
+		<div class="input-group">
+			<input type="text" class="form-control" name="perusahaan_tdp" placeholder="No. TDP" id="ntdp">
+			<span class="input-group-btn">
+				<button class="btn blue" type="button" jAction="ambil-data">
+					Cari <i class="fa fa-search"></i>
+				</button>
+			</span>
+		</div>
+		<div id="form_person_nik_error"></div>
+	</div>
+</div>
+<div class="form-group">
 	<label class="control-label col-md-3">Nama Perusahaan <span class="required">
 	* </span>
 	</label>
@@ -33,7 +49,7 @@
 	</div>
 </div>
 <div class="form-group">
-	<label class="control-label col-md-3">No. Fax 
+	<label class="control-label col-md-3">No. Fax
 	</label>
 	<div class="col-md-4">
 		<div class="input-icon">
