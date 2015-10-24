@@ -6,7 +6,7 @@
 		<div class="input-group">
 			<input type="text" class="form-control" name="perusahaan_tdp" placeholder="No. TDP" id="ntdp">
 			<span class="input-group-btn">
-				<button class="btn blue" type="button" jAction="ambil-data">
+				<button class="btn blue" type="button" jAction="ambil-perusahaan">
 					Cari <i class="fa fa-search"></i>
 				</button>
 			</span>
