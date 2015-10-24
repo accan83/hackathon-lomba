@@ -1,0 +1,9 @@
+.dropzone { 
+	min-height: 160px !important; 
+}
+
+.dz-message { 
+	background-image: url("../img/upload.png") !important;
+	margin-left: -100px !important;
+	margin-top: -45px !important;
+}
