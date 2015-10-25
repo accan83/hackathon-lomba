@@ -230,13 +230,9 @@ jQuery(document).ready(function() {
           var perusahaan_fax = jData[0].fax;
           var perusahaan_badan_usaha = jData[0].badan_usaha;
 
-//				  console.log(religion);
-//				  console.log(alamat);
-//				  console.log(jk);
 
           $("input[name='perusahaan_nama']").val(perusahaan_nama);
           $("select[name='perusahaan_badan_usaha']").val(perusahaan_badan_usaha.toLowerCase());
-//					console.log(perusahaan_badan_usaha.toLowerCase());
           $("input[name='perusahaan_no_telp']").val(perusahaan_telp);
           $("input[name='perusahaan_no_fax']").val(perusahaan_fax);
           $("input[name='perusahaan_jalan']").val(perusahaan_alamat);
